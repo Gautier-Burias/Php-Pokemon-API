@@ -77,6 +77,16 @@
         createUrl($pokemonUrl, $index);
     }
 
+    // Function to get another URL to get other info, like pokémon description etc...
+    function createInfoUrl($pokemonName, $index)
+    {
+        global $results;
+
+        $pokeInfoUrl = "https://pokeapi.co/api/v2/pokemon-species/";
+        $pokeInfoUrl .= $pokemonName;
+        createUrl($pokeInfoUrl, $index);
+    }
+
 
 
     // Function created sprite pokemon links

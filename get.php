@@ -27,27 +27,7 @@ function pokemonId($pokemonName, $index)
     return $pokemonId;
 }
 
-
-/* // FIRST TRY Function created type pokemon
-function pokemonType($pokemonName, $index)
-{
-    global $results;
-
-    createPokemonUrl($pokemonName, $index);
-    $pokemonType2 = $results[$index]->types[1]->type->name;
-
-    if($pokemonType2 !== null){
-    $pokemonType1 = $results[$index]->types[0]->type->name;
-    $pokemonType2 = $results[$index]->types[1]->type->name;
-    return $pokemonType1.' '.$pokemonType2;
-    }
-    else{
-        return $pokemonType1;
-
-    }
-
-}*/ 
-
+// Function created type pokemon
 function pokemonType($pokemonName, $index)
 {
     global $results;
@@ -66,6 +46,7 @@ function pokemonType($pokemonName, $index)
     }
 }
 
+// Function created abilities pokemon
 function pokemonAbilities($pokemonName, $index)
 {
     global $results;
@@ -76,7 +57,7 @@ function pokemonAbilities($pokemonName, $index)
     if(sizeof($results[$index]->abilities) >= 2){
     $pokemonAbility1 = $results[$index]->abilities[0]->ability->name;
     $pokemonAbility2 = $results[$index]->abilities[1]->ability->name;
-    return $pokemonAbility1. ' '.$pokemonAbility2;
+    return $pokemonAbility1. ' & '.$pokemonAbility2;
     }
     else{
         $pokemonAbility1 = $results[$index]->abilities[0]->ability->name;
@@ -84,6 +65,22 @@ function pokemonAbilities($pokemonName, $index)
     }
 }
 
+// Function created Pokemon Description
+
+function pokemonDescription($pokemonName, $index){
+
+    global $results;
+    createInfoUrl($pokemonName, $index);
+    if($pokemonDescription = $results[$index]->flavor_text_entries[1]->language->name === 'en'){
+        $pokemonDescription = $results[$index]->flavor_text_entries[1]->flavor_text;
+        return $pokemonDescription;
+
+    } // In case the description is in japanese, i fix it and put the english one
+    elseif ($pokemonDescription = $results[$index]->flavor_text_entries[1]->language->name === 'ja') {
+        $pokemonDescription = $results[$index]->flavor_text_entries[2]->flavor_text;
+        return $pokemonDescription;
+    } 
+}
 
 
 /*

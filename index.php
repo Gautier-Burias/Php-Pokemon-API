@@ -35,12 +35,11 @@
 
         <div class="pokeinfo">
             <h2>Pokémon Information</h2> 
-            <p class="pokeinfotype"><?= $_pokemon->name ?> is a <?= pokemonType($_pokemon->name, 3, 1)?> type pokémon.<br/>
-            (DESCRIPTION TEXT<br/>
-            (STYLE LEVEL)<br/></p>
-            <p class="pokeinfoabilities"> This pokémon abilities are :  <?= pokemonAbilities($_pokemon->name, 4, 1)?></p>
-            <img class="sprite" src="<?= pokemonSprite($_pokemon->name, 2, 0)?>">
+            <p class="pokeinfotype"><?= $_pokemon->name ?> is a <?= pokemonType($_pokemon->name, 3, 1)?> type pokémon.<br/></p>
+            <p class="pokeinfoabilities">This pokémon abilities are :  <?= pokemonAbilities($_pokemon->name, 4, 1)?></p>
+            <img class="infosprite" src="<?= pokemonSprite($_pokemon->name, 2, 0)?>">
             <p class = "close-button">Close information</p>
+            <p class = "pokeinfodescription">Description : <?= pokemonDescription($_pokemon->name, 4, 1)?></p>
         </div>
 
     <?php endforeach; ?>

@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #0c2461;
+    background-color :#FBC02D;
 
 }
 
@@ -18,7 +18,7 @@ body {
     margin: 20px;
     font-family: Montserrat, sans-serif;
     text-transform: capitalize;
-    border-radius: 20px;
+    border-radius: 5px;
     width: 200px;
     height: 200px;
     text-align: center;
@@ -54,16 +54,16 @@ body {
 }
 
 .list-item-pokemon:nth-child(odd) {
-    background: #38ada9;
+    background: #ecf0f1;
 }
 .list-item-pokemon:nth-child(even) {
-    background: #60a3bc;
+    background: black;
 }
 
 .pokeinfo{
     display: none;
     position: fixed;
-    background-color: red;
+    background-color: #B71C1C;
     width: 800px;
     height: 800px;
     border-radius: 3px;
@@ -71,28 +71,65 @@ body {
     z-index: 3;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 15px #130f40a9;
 }
 
 .pokeinfo h2{
+    font-family: Montserrat, sans-serif;
+    color: white;
     position: absolute;
     top: 10px;
 }
 
 .close-button{
+    font-family: Montserrat, sans-serif;
+    color: white;
     cursor: pointer;
     position: absolute;
     bottom : 0px;
     text-align: center;
     padding: 20px;
-    
+    border: 2px solid white;
+    border-radius: 2px;
+ 
+}
+.close-button:hover{
+    background-color: rgba(255, 255, 255, 0.123);
+}
+
+.pokeinfo .pokeinfotype{
+    color: white;
+    top: 350px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    left: 20px;
+    text-transform: capitalize;
+
 }
 
 .pokeinfo .pokeinfoabilities{
-    
+    color: white;
+    top: 300px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    left: 20px;
+
 }
 
-.sprite{
-    width: 400px;
-    height: 400px;
-    text-align: center;
+.infosprite{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top : 50px;
+}
+
+.pokeinfodescription{
+    color: white;
+    top: 400px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    left: 20px;
 }
