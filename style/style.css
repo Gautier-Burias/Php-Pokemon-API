@@ -1,0 +1,54 @@
+@import 'url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic)';
+body {
+    margin: 0;
+}
+
+.list-pokemon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #0c2461;
+
+}
+
+.list-item-pokemon {
+    align-items: center;
+    color: black;
+    padding: 20px;
+    margin: 20px;
+    font-family: Montserrat, sans-serif;
+    text-transform: capitalize;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+.list-item-pokemon .sprites-container {
+    position: relative;
+    width: 96px;
+    height: 96px;
+
+}
+.list-item-pokemon .sprite {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+}
+
+.list-item-pokemon .pokeid {
+    position: absolute;
+    margin : 0 auto;
+    margin : auto 0;
+
+}
+
+.list-item-pokemon .pokename {
+    position: absolute;
+}
+
+.list-item-pokemon:nth-child(odd) {
+    background: #38ada9;
+}
+.list-item-pokemon:nth-child(even) {
+    background: #60a3bc;
+}
