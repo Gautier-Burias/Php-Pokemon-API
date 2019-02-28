@@ -30,8 +30,19 @@
                 <img class="sprite sprite-0" src="<?= pokemonSprite($_pokemon->name, 2, 0)?>">
             </div>
             <p class ="pokename"><?= $_pokemon->name ?></p>
-            <p><?= pokemonType($_pokemon->name, 3, 1)?></p>
+            <p class="poketype">Type: <?= pokemonType($_pokemon->name, 3, 1)?></p>
         </div>
+
+        <div class="pokeinfo">
+            <h2>Pokémon Information</h2> 
+            <p class="pokeinfotype"><?= $_pokemon->name ?> is a <?= pokemonType($_pokemon->name, 3, 1)?> type pokémon.<br/>
+            (DESCRIPTION TEXT<br/>
+            (STYLE LEVEL)<br/></p>
+            <p class="pokeinfoabilities"> This pokémon abilities are :  <?= pokemonAbilities($_pokemon->name, 4, 1)?></p>
+            <img class="sprite" src="<?= pokemonSprite($_pokemon->name, 2, 0)?>">
+            <p class = "close-button">Close information</p>
+        </div>
+
     <?php endforeach; ?>
     </div>
     <script src="script.js"></script>

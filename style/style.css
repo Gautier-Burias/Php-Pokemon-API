@@ -22,6 +22,7 @@ body {
     width: 200px;
     height: 200px;
     text-align: center;
+    cursor: pointer;
 }
 .list-item-pokemon .sprites-container {
     position: relative;
@@ -33,6 +34,12 @@ body {
     position: absolute;
     width: 96px;
     height: 96px;
+}
+
+.list-item-pokemon .poketype{
+    position: relative;
+    display: flex;
+    bottom : -40px;
 }
 
 .list-item-pokemon .pokeid {
@@ -51,4 +58,41 @@ body {
 }
 .list-item-pokemon:nth-child(even) {
     background: #60a3bc;
+}
+
+.pokeinfo{
+    display: none;
+    position: fixed;
+    background-color: red;
+    width: 800px;
+    height: 800px;
+    border-radius: 3px;
+    opacity: 0.9;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokeinfo h2{
+    position: absolute;
+    top: 10px;
+}
+
+.close-button{
+    cursor: pointer;
+    position: absolute;
+    bottom : 0px;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.pokeinfo .pokeinfoabilities{
+    
+}
+
+.sprite{
+    width: 400px;
+    height: 400px;
+    text-align: center;
 }

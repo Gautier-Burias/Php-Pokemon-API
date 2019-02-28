@@ -58,14 +58,32 @@ function pokemonType($pokemonName, $index)
     if(sizeof($results[$index]->types) >= 2){
     $pokemonType1 = $results[$index]->types[0]->type->name;
     $pokemonType2 = $results[$index]->types[1]->type->name;
-    return $pokemonType1.' '.$pokemonType2;
+    return $pokemonType1.' & '.$pokemonType2;
     }
     else{
         $pokemonType1 = $results[$index]->types[0]->type->name;
         return $pokemonType1;
-
     }
 }
+
+function pokemonAbilities($pokemonName, $index)
+{
+    global $results;
+
+    createPokemonUrl($pokemonName, $index);
+    $pokemonAbility = $results[$index]->abilities[0];
+
+    if(sizeof($results[$index]->abilities) >= 2){
+    $pokemonAbility1 = $results[$index]->abilities[0]->ability->name;
+    $pokemonAbility2 = $results[$index]->abilities[1]->ability->name;
+    return $pokemonAbility1. ' '.$pokemonAbility2;
+    }
+    else{
+        $pokemonAbility1 = $results[$index]->abilities[0]->ability->name;
+        return $pokemonAbility1;
+    }
+}
+
 
 
 /*
@@ -84,9 +102,5 @@ function search($getPokemon, $pokemonName){
     
 }
 */
-
-
-
-
 
 ?>
