@@ -13,16 +13,34 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style/style.css">
 </head>
 <body>
-    <form action="" method="get">
-        <input type="text" name="pokemon" placeholder="Search a Pokemon">
-        <input value="Search" type="submit">
+    <h1>Pokedex</h1>
+    <form class="formSearch"action="" method="get">
+        <input class ="input" type="text" name="pokemon" placeholder="Search a Pokemon">
+        <input class ="submitfirst" value="Search" type="submit">
     </form>
+    <!--
     <form action="" method="get">
         <label for="displayed">Display 200 Pokemon until : </label>
         <input type="number" name="displayed" placeholder="Example : 600">
         <input value="Set" type="submit">
     </form>
+-->
     <div class="list-pokemon">
+
+    <?php if(!empty($_GET['pokemon'])): ?>
+    <div class="pokeinfo" style ="display : flex">
+            <h2>Pokémon Information</h2> 
+            <p class="pokeinfotype"><?= $searchedPokemon ?> is a <?= pokemonType($searchedPokemon, 3, 1)?> type pokémon.<br/></p>
+            <p class="pokeinfoabilities">This pokémon abilities are :  <?= pokemonAbilities($searchedPokemon, 4, 1)?></p>
+            <img class="infosprite" src="<?= pokemonSprite($searchedPokemon, 2, 0)?>">
+            <form action="" method="get">
+                <input class ="submit" value="Perform a new search" type="submit">
+             </form> 
+             <p class = "pokeinfodescription">Description : <?= pokemonDescription($searchedPokemon, 4, 1)?></p>
+
+        </div>
+    <?php endif;?>
+
     <?php foreach($pokemon as $_pokemon): ?>
         <div class="list-item-pokemon">
             <p class="pokeid"><?= pokemonId($_pokemon->name, 1)?>.</p>

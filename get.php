@@ -76,7 +76,7 @@ function pokemonDescription($pokemonName, $index){
         return $pokemonDescription;
 
     } // In case the description is in japanese, i fix it and put the english one
-    elseif ($pokemonDescription = $results[$index]->flavor_text_entries[1]->language->name === 'ja') {
+    else{
         $pokemonDescription = $results[$index]->flavor_text_entries[2]->flavor_text;
         return $pokemonDescription;
     } 

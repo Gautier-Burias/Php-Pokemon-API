@@ -2,13 +2,13 @@
 
     // How many pokemon to display
 
-    if(empty($_GET['displayed']) || $_GET['displayed'] < 200){
-        $current = 0;
+
+
+    if($searchedPokemon = !empty($_GET['pokemon'])){
+        $searchedPokemon = empty($_GET['pokemon']) ? '' : strtolower($_GET['pokemon']);
+
     }
-    else {
-        $current = $_GET['displayed'] - 200;
-    };
-    $step = empty($_GET['displayed']) ? 50 : $_GET['displayed'] - $current;
+    $step = empty($_GET['displayed']) ? 50 : $_GET['displayed'];
 
     // Searching pokemon 
     if(!empty($_GET['pokemon'])){
@@ -23,7 +23,7 @@
     // Create API general url
     $generalUrl = 'https://pokeapi.co/api/v2/pokemon/?';
     $generalUrl .= http_build_query([
-        'offset' => $current,
+        'offset' => 0,
         'limit' => $step,
     ]);
     
