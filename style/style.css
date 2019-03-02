@@ -1,20 +1,23 @@
 @import 'url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic)';
 body {
     margin: 0;
-    background-color :#FBC02D;
+    background-color :#39436A
+
+    /*background-color :#FBC02D;*/
 
 }
 
 h1{
     font-family: Montserrat, sans-serif;
     text-align: center;
+    color: white;
 }
 
 .list-pokemon{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color :#FBC02D;
+    background-color :#39436A
 
 }
 
@@ -31,21 +34,27 @@ h1{
     text-align: center;
     cursor: pointer;
     box-shadow: 5px 5px 15px #0c092977;
+    transition: all .3s;
 }
 
-.list-item-pokemon, .searched{
-    align-items: center;
-    color: black;
-    padding: 20px;
-    margin: 20px;
-    font-family: Montserrat, sans-serif;
-    text-transform: capitalize;
-    border-radius: 5px;
-    width: 200px;
-    height: 200px;
-    text-align: center;
+.list-item-pokemon:hover{
+
+    transform: scale(1.05);
+}
+
+.animationhover{
+    animation-name: hover;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
 
 }
+
+@keyframes hover{
+    0%{width: 200px; height: 200px;}
+    100%{width: 210px; height: 210px;}
+}
+
+
 
 .list-item-pokemon .sprites-container {
     position: relative;
@@ -104,6 +113,15 @@ h1{
     top: 10px;
 }
 
+.pokeinfoname{
+    font-family: Montserrat, sans-serif;
+    color: white;
+    position: absolute;
+    text-transform: capitalize;
+    top: 60px;
+    font-size: 20px;
+}
+
 .close-button{
     font-family: Montserrat, sans-serif;
     color: white;
@@ -122,7 +140,7 @@ h1{
 
 .pokeinfo .pokeinfotype{
     color: white;
-    top: 350px;
+    top: 400px;
     position: absolute;
     font-family: Montserrat, sans-serif;
     font-size: 20px;
@@ -133,7 +151,7 @@ h1{
 
 .pokeinfo .pokeinfoabilities{
     color: white;
-    top: 300px;
+    top: 350px;
     position: absolute;
     font-family: Montserrat, sans-serif;
     font-size: 20px;
@@ -141,16 +159,35 @@ h1{
 
 }
 
+.pokeinfo .pokeheight{
+    color: white;
+    top: 450px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    left: 20px;
+}
+
+.pokeinfo .pokeweight{
+    color: white;
+    top: 500px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    left: 20px;
+}
+
+
 .infosprite{
     position: absolute;
     width: 300px;
     height: 300px;
-    top : 50px;
+    top : 80px;
 }
 
 .pokeinfodescription{
     color: white;
-    top: 400px;
+    top: 550px;
     position: absolute;
     font-family: Montserrat, sans-serif;
     font-size: 15px;
@@ -179,6 +216,7 @@ h1{
     border: 2px solid white;
     border-radius: 2px; 
     bottom : -300px;
+    outline: none;
 }
 .submitfirst{
     font-family: Montserrat, sans-serif;
@@ -187,7 +225,9 @@ h1{
     cursor: pointer;
     position: relative;
     padding: 10px;
-    border-radius: 5px; 
+    border-radius: 5px;
+    outline: none;
+ 
 }
 
 .submitfirst:hover{

@@ -82,22 +82,33 @@ function pokemonDescription($pokemonName, $index){
     } 
 }
 
-
-/*
-function search($getPokemon, $pokemonName){
+// Function created height/weight pokemon
+function pokemonHeight($pokemonName, $index)
+{
     global $results;
 
-    $search = empty($_GET['search']) ? '' : $_GET['search'];
-    if (empty($_GET['search'])) 
-    {
-        $searchState = 0;
-        
-    }
-    else {
-        $searchState = 1;
-    };
-    
+    createPokemonUrl($pokemonName, $index);
+
+    $pokemonHeight = $results[$index]->height;
+    return $pokemonHeight;
 }
-*/
+
+
+function pokemonWeight($pokemonName, $index)
+{
+    global $results;
+
+    createPokemonUrl($pokemonName, $index);
+
+    $pokemonWeight = $results[$index]->weight;
+
+    return $pokemonWeight/10;
+}
+
+
+
+
+
+
 
 ?>

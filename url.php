@@ -87,6 +87,8 @@
         createUrl($pokeInfoUrl, $index);
     }
 
+   
+
 
 
     // Function created sprite pokemon links
