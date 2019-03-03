@@ -1,22 +1,24 @@
 <?php
 
-
-function pokemonSprite($pokemonName, $index, $side)
+// Pokemon Sprite ----------------------------------------------------------
+function pokemonSprite($pokemonName, $index)
 {
     global $results;
 
     createPokemonUrl($pokemonName, $index);
-    if($side===0){
          $pokemonSprite = $results[$index]->sprites->front_default;
-    }
-    else{
-        $pokemonSprite = $results[$index]->sprites->back_default;
-
-    }
     return $pokemonSprite;
 }
+function pokemonSpriteShiny($pokemonName, $index)
+{
+    global $results;
 
-// Function created id pokemon
+    createPokemonUrl($pokemonName, $index);
+         $pokemonSpriteShiny = $results[$index]->sprites->front_shiny;
+    return $pokemonSpriteShiny;
+}
+
+// Pokemon ID ----------------------------------------------------------
 function pokemonId($pokemonName, $index)
 {
     global $results;
@@ -27,7 +29,7 @@ function pokemonId($pokemonName, $index)
     return $pokemonId;
 }
 
-// Function created type pokemon
+// Pokemon Type ----------------------------------------------------------
 function pokemonType($pokemonName, $index)
 {
     global $results;
@@ -46,7 +48,7 @@ function pokemonType($pokemonName, $index)
     }
 }
 
-// Function created abilities pokemon
+// Pokemon Abilities ----------------------------------------------------------
 function pokemonAbilities($pokemonName, $index)
 {
     global $results;
@@ -65,8 +67,7 @@ function pokemonAbilities($pokemonName, $index)
     }
 }
 
-// Function created Pokemon Description
-
+// Pokemon Description ----------------------------------------------------------
 function pokemonDescription($pokemonName, $index){
 
     global $results;
@@ -82,7 +83,7 @@ function pokemonDescription($pokemonName, $index){
     } 
 }
 
-// Function created height/weight pokemon
+// Pokemon Height/Weight----------------------------------------------------------
 function pokemonHeight($pokemonName, $index)
 {
     global $results;
@@ -92,7 +93,6 @@ function pokemonHeight($pokemonName, $index)
     $pokemonHeight = $results[$index]->height;
     return $pokemonHeight;
 }
-
 
 function pokemonWeight($pokemonName, $index)
 {
@@ -104,11 +104,5 @@ function pokemonWeight($pokemonName, $index)
 
     return $pokemonWeight/10;
 }
-
-
-
-
-
-
 
 ?>

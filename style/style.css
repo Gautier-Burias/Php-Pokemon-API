@@ -2,7 +2,6 @@
 body {
     margin: 0;
     background-color :#39436A
-
     /*background-color :#FBC02D;*/
 
 }
@@ -13,6 +12,7 @@ h1{
     color: white;
 }
 
+/* Pokémon List ---------------------------------------------------------- */
 .list-pokemon{
     display: flex;
     flex-wrap: wrap;
@@ -35,6 +35,8 @@ h1{
     cursor: pointer;
     box-shadow: 5px 5px 15px #0c092977;
     transition: all .3s;
+    background: #ecf0f1;
+
 }
 
 .list-item-pokemon:hover{
@@ -42,19 +44,7 @@ h1{
     transform: scale(1.05);
 }
 
-.animationhover{
-    animation-name: hover;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-
-}
-
-@keyframes hover{
-    0%{width: 200px; height: 200px;}
-    100%{width: 210px; height: 210px;}
-}
-
-
+/* Pokémon Sprite ---------------------------------------------------------- */
 
 .list-item-pokemon .sprites-container {
     position: relative;
@@ -68,11 +58,15 @@ h1{
     height: 96px;
 }
 
+/* Pokémon Type ---------------------------------------------------------- */
+
 .list-item-pokemon .poketype{
     position: relative;
     display: flex;
     bottom : -40px;
 }
+
+/* Pokémon ID ---------------------------------------------------------- */
 
 .list-item-pokemon .pokeid {
     position: absolute;
@@ -81,16 +75,12 @@ h1{
 
 }
 
+/* Pokémon Name ---------------------------------------------------------- */
+
 .list-item-pokemon .pokename {
     position: absolute;
 }
 
-.list-item-pokemon:nth-child(odd) {
-    background: #ecf0f1;
-}
-.list-item-pokemon:nth-child(even) {
-    background: black;
-}
 
 .pokeinfo{
     display: none;
@@ -127,7 +117,7 @@ h1{
     color: white;
     cursor: pointer;
     position: absolute;
-    bottom : 0px;
+    bottom : 20px;
     text-align: center;
     padding: 20px;
     border: 2px solid white;
@@ -183,6 +173,26 @@ h1{
     width: 300px;
     height: 300px;
     top : 80px;
+    left: 100px;
+}
+
+.infosprite2{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top : 80px;
+    right: 100px;
+
+}
+
+.shinyform{
+    color: white;
+    top: 350px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    right: 200px; 
+    text-transform: capitalize;
 }
 
 .pokeinfodescription{
@@ -190,7 +200,7 @@ h1{
     top: 550px;
     position: absolute;
     font-family: Montserrat, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     left: 20px;
 }
 
@@ -203,6 +213,8 @@ h1{
     margin: 10px 0 0 0;
     border-radius: 5px;
     font-size: 14px;
+    outline: none;
+
 
 }
 
@@ -217,6 +229,7 @@ h1{
     border-radius: 2px; 
     bottom : -300px;
     outline: none;
+    font-size : 15px;
 }
 .submitfirst{
     font-family: Montserrat, sans-serif;

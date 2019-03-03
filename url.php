@@ -1,38 +1,18 @@
 <?php
 
-    // How many pokemon to display
-
-
-
-    if($searchedPokemon = !empty($_GET['pokemon'])){
-        $searchedPokemon = empty($_GET['pokemon']) ? '' : strtolower($_GET['pokemon']);
-
-    }
-    $step = empty($_GET['displayed']) ? 50 : $_GET['displayed'];
-
-    // Searching pokemon 
-    if(!empty($_GET['pokemon'])){
-        $pokemonsearched = $_GET['pokemon'];
-            if($pokemonsearched === 'pikachu'){
-                echo 'COUCOU';
-            }
-            else{
-                echo '';
-            }
-    }
-    // Create API general url
+    // Create the general URL of PokeAPI
     $generalUrl = 'https://pokeapi.co/api/v2/pokemon/?';
     $generalUrl .= http_build_query([
         'offset' => 0,
-        'limit' => $step,
+        'limit' => 50,
     ]);
     
-    // Function creating urls when needed
+    // Creating URL 
     function createUrl($url, $index)
     {
         global $results;
 
-        // Create cache info
+        // Cache info
         $cacheKey = md5($url);
         $cachePath = './cache/'.$cacheKey;
         $cacheUsed = false;
@@ -66,7 +46,7 @@
         $results[$index] = json_decode($results[$index]);
     };
 
-    // Function created pokemon links
+    // Create the pokemon links
     function createPokemonUrl($pokemonName, $index)
     {
         global $results;
@@ -77,7 +57,7 @@
         createUrl($pokemonUrl, $index);
     }
 
-    // Function to get another URL to get other info, like pokémon description etc...
+    // Function to get another URL to get other info (like pokémon description etc...)
     function createInfoUrl($pokemonName, $index)
     {
         global $results;
@@ -85,17 +65,15 @@
         $pokeInfoUrl = "https://pokeapi.co/api/v2/pokemon-species/";
         $pokeInfoUrl .= $pokemonName;
         createUrl($pokeInfoUrl, $index);
-    }
-
-   
-
-
-
-    // Function created sprite pokemon links
-   
+    }   
 
     createUrl($generalUrl, 0);
 
+    // Searching pokemon 
+
+    if($searchedPokemon = !empty($_GET['pokemon'])){
+        $searchedPokemon = empty($_GET['pokemon']) ? '' : strtolower($_GET['pokemon']);
+    }
+
     $pokemon = $results[0]->results;
-    $count = $results[0]->count;
 ?>
