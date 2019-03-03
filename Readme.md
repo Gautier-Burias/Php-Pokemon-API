@@ -72,7 +72,7 @@ if($pokemonDescription = $results[$index]->flavor_text_entries[1]->language->nam
 
 And thats it! 
 
-Thanks for reading :)
+## Thanks for reading :)
 
 
 
