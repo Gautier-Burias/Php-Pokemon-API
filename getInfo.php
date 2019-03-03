@@ -1,5 +1,15 @@
 <?php
 
+// Pokemon ID ----------------------------------------------------------
+function pokemonId($pokemonName, $index)
+{
+    global $results;
+
+    createPokemonUrl($pokemonName, $index);
+    $pokemonId = $results[$index]->id;
+    return $pokemonId;
+}
+
 // Pokemon Sprite ----------------------------------------------------------
 function pokemonSprite($pokemonName, $index)
 {
@@ -8,6 +18,9 @@ function pokemonSprite($pokemonName, $index)
     createPokemonUrl($pokemonName, $index);
          $pokemonSprite = $results[$index]->sprites->front_default;
     return $pokemonSprite;
+
+
+    
 }
 function pokemonSpriteShiny($pokemonName, $index)
 {
@@ -16,17 +29,9 @@ function pokemonSpriteShiny($pokemonName, $index)
     createPokemonUrl($pokemonName, $index);
          $pokemonSpriteShiny = $results[$index]->sprites->front_shiny;
     return $pokemonSpriteShiny;
-}
 
-// Pokemon ID ----------------------------------------------------------
-function pokemonId($pokemonName, $index)
-{
-    global $results;
 
-    createPokemonUrl($pokemonName, $index);
-
-    $pokemonId = $results[$index]->id;
-    return $pokemonId;
+    
 }
 
 // Pokemon Type ----------------------------------------------------------
@@ -35,6 +40,8 @@ function pokemonType($pokemonName, $index)
     global $results;
 
     createPokemonUrl($pokemonName, $index);
+    set_error_handler('error');
+
     $pokemonType = $results[$index]->types[0];
 
     if(sizeof($results[$index]->types) >= 2){
@@ -54,6 +61,8 @@ function pokemonAbilities($pokemonName, $index)
     global $results;
 
     createPokemonUrl($pokemonName, $index);
+    set_error_handler('error2');
+
     $pokemonAbility = $results[$index]->abilities[0];
 
     if(sizeof($results[$index]->abilities) >= 2){
@@ -72,6 +81,9 @@ function pokemonDescription($pokemonName, $index){
 
     global $results;
     createInfoUrl($pokemonName, $index);
+    set_error_handler('error2');
+
+
     if($pokemonDescription = $results[$index]->flavor_text_entries[1]->language->name === 'en'){
         $pokemonDescription = $results[$index]->flavor_text_entries[1]->flavor_text;
         return $pokemonDescription;
@@ -89,6 +101,8 @@ function pokemonHeight($pokemonName, $index)
     global $results;
 
     createPokemonUrl($pokemonName, $index);
+    set_error_handler('error2');
+
 
     $pokemonHeight = $results[$index]->height;
     return $pokemonHeight;
@@ -99,10 +113,12 @@ function pokemonWeight($pokemonName, $index)
     global $results;
 
     createPokemonUrl($pokemonName, $index);
+    set_error_handler('error2');
+
 
     $pokemonWeight = $results[$index]->weight;
 
     return $pokemonWeight/10;
-}
 
+}
 ?>

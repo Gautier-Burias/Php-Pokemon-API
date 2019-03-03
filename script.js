@@ -6,21 +6,23 @@ const infosearched = document.querySelector('.pokeinfo searched')
 for(let i = 0; i < button.length; i++)
 {
     button[i].addEventListener(
-        "click", () =>
+        'click', () =>
         {
             for(let i = 0; i < infopannel.length; i++)
             {
                 infopannel[i].style.display = "none"
+                
             }
             infopannel[i].style.display = "flex"
         }
     ) 
-    closeButton[i].addEventListener('click',
-() =>{
-  infopannel[i].style.display = 'none'
-})
+    closeButton[i].addEventListener(
+        'click', () =>
+        {
+        infopannel[i].style.display = 'none'
+
+    })
+
 }
-
-
 
 

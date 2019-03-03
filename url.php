@@ -4,7 +4,7 @@
     $generalUrl = 'https://pokeapi.co/api/v2/pokemon/?';
     $generalUrl .= http_build_query([
         'offset' => 0,
-        'limit' => 50,
+        'limit' => 151,
     ]);
     
     // Creating URL 
@@ -73,7 +73,18 @@
 
     if($searchedPokemon = !empty($_GET['pokemon'])){
         $searchedPokemon = empty($_GET['pokemon']) ? '' : strtolower($_GET['pokemon']);
+        
+    }
+
+    // Error if the $searchedPokemon doesnt exist
+    function error(){
+        echo 'Pokémon Unknown - ';
+    }
+    function error2(){
+        echo ' ';
     }
 
     $pokemon = $results[0]->results;
+
+    
 ?>
