@@ -19,6 +19,12 @@
         <input class ="input" type="text" name="pokemon" placeholder="Search any Pokemon">
         <input class ="submitfirst" value="Search" type="submit">
     </form>
+    <!--
+    <form class="formDisplay"action="" method="get">
+        <input class ="input" type="number" name="displaypokemon" placeholder="How many pokemon you wanna display">
+        <input class ="submitfirst" value="Display" type="submit">
+    </form>
+-->
     <div class="list-pokemon">
 
         <!-- Pokémon display 151 pokémon ----------------------------------------------- -->

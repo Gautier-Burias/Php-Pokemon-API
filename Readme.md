@@ -1,4 +1,4 @@
-## Pokédex Using PokéAPI
+### Pokédex Using PokéAPI
 
 This project is a Pokédex using the https://pokeapi.co/.
 
@@ -7,7 +7,7 @@ This project is a Pokédex using the https://pokeapi.co/.
 I made this Pokédex using PHP to get all the infos about the pokémon that I needed.
 I also used a bit of Javascript to make dynamic contents and ofc HTML and CSS.
 
-# Working with the API 
+## Working with the API 
 
 Setting up the url.php files was a bit hard at first, but after searching info on internet and after I asked some of my classmates, I managed to do it well.
 Once the url.php file was ready, I only needed to create all the function I wanted in the getInfo.php (to get the sprite, the types, the abilities etc ).

@@ -87,7 +87,7 @@ h1{
     position: fixed;
     background-color: #B71C1C;
     width: 800px;
-    height: 800px;
+    height: 750px;
     border-radius: 3px;
     opacity: 0.95;
     z-index: 3;
@@ -222,6 +222,10 @@ h1{
 }
 
 .formSearch{
+    text-align: center;
+
+}
+.formDisplay{
     text-align: center;
 }
 

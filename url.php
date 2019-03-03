@@ -76,6 +76,8 @@
         
     }
 
+    // Display pokemon 
+
     // Error if the $searchedPokemon doesnt exist
     function error(){
         echo 'Pokémon Unknown - ';
